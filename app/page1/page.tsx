@@ -2,17 +2,16 @@
 
 import SignatureCanvas from 'react-signature-canvas';
 import {useRef} from 'react';
-import {Button} from "@/components/ui/button";
+import {Button} from "@/components/vi/button";
 //import useTimeOut from "@/components/useTimeOut";
 
 export default function Page(){
 
-    //useTimeOut(10000);
-
-    const sigCanvas = useRef({});
+    const sigCanvasRef = useRef(null);
 
     const clear = () => {
-        //sigCanvas.current.clear();
+            // @ts-ignore
+        sigCanvasRef.current?.clear();
     }
 
     const save = () => {
@@ -26,6 +25,7 @@ export default function Page(){
     return <div className="text-white h-full flex flex-col space-y-5 items-center justify-center">
         <h1>Signature</h1>
         <SignatureCanvas
+            ref={sigCanvasRef}
             penColor='black'
             canvasProps={{className:'sigCanvas border-[10px] border-green-300 bg-white'}}
         />

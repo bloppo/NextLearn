@@ -3,7 +3,7 @@
 import {useContext, useEffect} from "react";
 import {ActivityContext} from "@/components/ActivityProvider";
 
-import {Button} from "@/components/ui/button";
+import {Button} from "@/components/vi/button";
 import {SignedIn, SignedOut} from "@clerk/nextjs";
 
 export default function HomePage(){

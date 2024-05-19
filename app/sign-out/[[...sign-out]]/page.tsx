@@ -1,6 +1,6 @@
 'use client'
 
-import {Button} from '@/components/ui/button';
+import {Button} from '@/components/vi/button';
 
 import { useClerk , SignOutButton} from '@clerk/nextjs';
 import CountDownTimer from "@/components/CountDownTimer";
