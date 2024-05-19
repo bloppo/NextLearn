@@ -19,9 +19,9 @@ export default function Page(){
             {rejectUnauthorized: false}
         );
 
-        //const url = 'https://ws.comtrans.net/weborderdblookup/CrisisDev.asmx?op=Wowzer';
+        const url = 'https://ws.comtrans.net/weborderdblookup/CrisisDev.asmx?op=Wowzer';
 
-        const url = 'http://localhost:3001/data';
+        //const url = 'http://localhost:3001/data';
 
         const res = await axios({
             url: url,
