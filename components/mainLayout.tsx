@@ -13,7 +13,7 @@ export default function MainLayout({children}:{children?:ReactNode}){
     const LEFT_SIDE = "bg-gray-500 h-[calc(100vh-20px)] w-3/12 p-5 border-black border-2 mr-1"
     const RIGHT_SIDE = "bg-gray-500 h-[calc(100vh-20px)]  w-3/4  p-5 border-2 border-black"
 
-    const [activity ,startCheck,stopCheck] = useTimeOut(1000 * 60 * 15);
+    const [activity ,startCheck,stopCheck] = useTimeOut(1000 * 60 * 2);
 
     // @ts-ignore
     const {updateStartActivity,updateStopActivity} = useContext(ActivityContext);
@@ -39,6 +39,7 @@ export default function MainLayout({children}:{children?:ReactNode}){
                     <MyLink path="/home" title='Home' activeLink={activeLink('/home')}/>
                     <MyLink path="/page1" title="Page 1" activeLink={activeLink('/page1')}/>
                     <MyLink path="/page2" title="Page 2" activeLink={activeLink('/page2')}/>
+                    <MyLink path="/page3" title="Page 3" activeLink={activeLink('/page3')}/>
                     <SignedOut>
                         <MyLink path="/sign-in" title="Sign In" activeLink={activeLink('/sign-in')}/>
                     </SignedOut>

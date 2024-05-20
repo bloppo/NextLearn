@@ -1,18 +1,15 @@
-'use client'
+
+//TODO Session
+//TODO TRF Listing
+//TODO TRF Edit
+//TODO Web Services
 
 //import type { Metadata } from "next";
-import { ClerkProvider , SignedIn, SignedOut} from '@clerk/nextjs';
-import {usePathname} from "next/navigation";
-import MyLink from "@/components/MyLink"
+
 import { Inter } from "next/font/google";
 import "./globals.css";
-import useTimeOut from "@/components/useTimeOut";
-import {useContext} from "react";
-import {ActivityContext, ActivityProvider} from "@/components/ActivityProvider";
-import {QueryClientProvider} from "@tanstack/react-query";
 
-import MainLayout from "@/app/mainLayout";
-import queryClient from "@/data/queryClient";
+import AllProviders from "@/components/AllProviders";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,18 +18,12 @@ export default function RootLayout({children}: Readonly<{
 }>) {
 
     return (
-<ClerkProvider>
-    <ActivityProvider>
-        <QueryClientProvider client={queryClient}>
         <html lang="en">
         <head>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <title>Learning</title>
         </head>
-        <MainLayout>{children}</MainLayout>
+        <AllProviders>{children}</AllProviders>
         </html>
-        </QueryClientProvider>
-    </ActivityProvider>
-</ClerkProvider>
 );
 }
