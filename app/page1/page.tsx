@@ -1,9 +1,8 @@
 'use client'
 
 import SignatureCanvas from 'react-signature-canvas';
-import {useRef} from 'react';
+import {useRef,useEffect, useState} from 'react';
 import {Button} from "@/components/vi/button";
-//import useTimeOut from "@/components/useTimeOut";
 
 export default function Page(){
 
@@ -22,6 +21,7 @@ export default function Page(){
     //            width={500}
     //            height={200}
     // @ts-ignore
+
     return <div className="text-white h-full flex flex-col space-y-5 items-center justify-center">
         <h1>Signature</h1>
         <SignatureCanvas

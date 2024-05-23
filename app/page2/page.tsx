@@ -15,10 +15,6 @@ export default function Page(){
     // @ts-ignore
     const fetchEm = async () => {
 
-        const agent = new https.Agent(
-            {rejectUnauthorized: false}
-        );
-
         //const url = 'https://ws.comtrans.net/weborderdblookup/CrisisDev.asmx?op=Wowzer';
 
         const url = 'http://localhost:3001/data';
@@ -43,7 +39,6 @@ export default function Page(){
 
     console.log(r);
 
-    // @ts-ignore
     return (
         <div className="text-white h-full flex flex-col items-center justify-center">
         <h1>Page 2</h1>

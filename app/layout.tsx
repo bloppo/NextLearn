@@ -22,6 +22,7 @@ export default function RootLayout({children}: Readonly<{
         <head>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <title>Learning</title>
+
         </head>
         <AllProviders>{children}</AllProviders>
         </html>
