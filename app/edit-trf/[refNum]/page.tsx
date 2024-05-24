@@ -56,7 +56,7 @@ export default function Page(){
 
     }
 
-    const blurText = (r) => {
+    const blurText = (r:string) => {
 
         let retVal = "";
 
