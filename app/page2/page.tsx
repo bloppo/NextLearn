@@ -48,10 +48,10 @@ export default function Page(){
             <p className="">
                 Paddle boarding on the Salt River near Mesa, Arizona offers a unique and exhilarating experience,
                 allowing you to immerse yourself in the stunning desert landscapes and encounter diverse wildlife up
-                close. Here's a captivating story about this adventure:
+                close. Here&apos;s a captivating story about this adventure:
                 <br/><br/>
                 The Lower Salt River, with its serene pools and gentle rapids, provides an idyllic setting for paddle
-                boarding enthusiasts[1]. As you glide through the crystal-clear waters, you'll be greeted by a
+                boarding enthusiasts[1]. As you glide through the crystal-clear waters, you&apos;ll be greeted by a
                 wilderness dream – rolling hills adorned with iconic saguaro cacti, rugged cliffs jutting skyward, and
                 the occasional sighting of wild mustangs grazing along the riverbanks[3].
                 <br/><br/>
@@ -60,7 +60,7 @@ export default function Page(){
                 experience[3]. Witnessing their glossy chestnut coats and distinctive white markings up close is a truly
                 breathtaking moment[3].
                 <br/><br/>
-                But the Salt River's charm extends beyond the wild horses. The river's tranquil flow allows you
+                But the Salt River&apos;s charm extends beyond the wild horses. The river&apos;s tranquil flow allows you
                 to drift peacefully, taking in the serene beauty of the desert landscape[3]. Keep your eyes peeled for a
                 diverse array of wildlife, including bald eagles soaring overhead, great blue herons wading in the
                 shallows, and mule deer peeking out from the dense foliage[3].
@@ -69,7 +69,7 @@ export default function Page(){
                 inviting warmth of spring and early summer, when the waters are adorned in radiant hues, or revel in the
                 picture-perfect weather of late spring to early fall, setting the stage for an unforgettable sojourn[1].
                 <br/><br/>
-                Whether you're a seasoned paddle boarder or a newcomer to the sport, the Salt River promises an
+                Whether you&apos;re a seasoned paddle boarder or a newcomer to the sport, the Salt River promises an
                 exhilarating adventure[2]. Guided tours offered by local outfitters like 360 Adventures and REI Co-Op
                 Experiences provide a safe and enriching experience, allowing you to fully immerse yourself in the
                 beauty of this desert oasis[3].
