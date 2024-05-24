@@ -4,9 +4,9 @@ import {SignedOut,SignedIn} from '@clerk/nextjs';
 import {Button} from "@/components/vi/button";
 
 export default function RootPage(){
-    return <div className="text-white h-full flex flex-col items-center justify-center">
+    return <div className="text-black h-full flex flex-col items-center justify-center">
         <div>
-            <Button className="text-white bg-transparent" onClick={(e) => {console.log('click')}}>
+            <Button className="text-black bg-transparent" onClick={(e) => {console.log('click')}}>
                 Yowza
             </Button>
             <h1>Wow !</h1>

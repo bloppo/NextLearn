@@ -104,10 +104,10 @@ export default function Page(){
     return (<div>
 
         <div className="m-5">
-            <Link className="text-blue-300 underline" href="../page3">Back to Listing</Link>
+            <Link className="text-blue-500 underline" href="../page3">Back to Listing</Link>
         </div>
 
-        <h1 className="text-white text-lg">Edit TRF # {params.refNum}</h1>
+        <h1 className="text-black text-lg">Edit TRF # {params.refNum}</h1>
 
         <table className="w-full mt-2 border-2 border-black bg-blue-100">
             <thead className="block p-2 border-b-2 border-black">

@@ -8,6 +8,7 @@ import {useContext,useState,useEffect} from "react";
 import {ActivityContext} from "@/components/ActivityProvider";
 
 const SignOutButton2 = () => {
+
     const { signOut } = useClerk();
 
     // @ts-ignore
@@ -21,6 +22,7 @@ const SignOutButton2 = () => {
 };
 
 export default function Page(){
+
     const titlecb = (timeLeft:number) => {
         return <span>You will be signed out in <span className="font-bold text-red-500 text-xl">{timeLeft}</span> seconds.</span>
     }
@@ -36,7 +38,7 @@ export default function Page(){
     }
 
     return <div className="h-full w-full flex flex-col items-center justify-center">
-        <CountDownTimer className="p-2.5 text-white"
+        <CountDownTimer className="p-2.5 text-black"
                         title={titlecb}
                         duration={20}
                         onComplete={cb}/>

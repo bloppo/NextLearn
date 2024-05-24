@@ -1,11 +1,13 @@
 'use client'
 
 import {useState,useEffect,useCallback} from 'react';
-import {useRouter} from "next/navigation";
+import {useRouter, usePathname} from "next/navigation";
 
 export default function useTimeOut(timeoutMS = 60000){
 
     const router = useRouter();
+
+    const pathname = usePathname();
 
     const [lastActivity,setLastActivity] = useState(new Date().getTime());
 
@@ -22,6 +24,7 @@ export default function useTimeOut(timeoutMS = 60000){
                 const now = new Date().getTime();
                 if (now - lastActivity > timeoutMS) {
                     //setIsRunning(false);
+
                     router.push('/sign-out');
                 }
             } else {

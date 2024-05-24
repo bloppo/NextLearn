@@ -1,7 +1,5 @@
 'use client'
 
-import {useEffect,useState} from "react";
-import https from "https";
 import axios from "axios";
 import {useQuery} from "@tanstack/react-query";
 import TRFListing from "@/components/TRFListing";
@@ -13,8 +11,6 @@ const Page = () => {
     const fetchEm =  async () => {
 
         const url = 'https://ws.comtrans.net/weborderdblookup/CrisisDev.asmx/GetTRFListing';
-
-        //const url = 'http://localhost:3001/data';
 
         const res = await axios({
             url: url,

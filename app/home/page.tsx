@@ -8,7 +8,7 @@ import {SignedIn, SignedOut} from "@clerk/nextjs";
 
 export default function HomePage(){
 
-    return <div className="text-white h-full flex flex-col items-center justify-center">
+    return <div className="text-black h-full flex flex-col items-center justify-center">
         <div>
             <Button className="text-white bg-transparent" onClick={(e) => {console.log('click')}}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">

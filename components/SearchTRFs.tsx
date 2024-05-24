@@ -7,11 +7,11 @@ import SearchForm from "@/components/SearchForm";
 
 
 const SearchTRFs = () => {
-    return <div className="w-full h-[300px] border-2 border-black">
+    return <div className="w-full h-[275px] border-2 border-black">
         <div className="flex flex-row">
-            <div className="flex flex-row w-[400px] justify-between bg-gray-200 p-5">
+            <div className="flex flex-row w-[400px] justify-between bg-gray-200 p-5 m-5 shadow-gray-500 shadow-lg">
                 <Image className="m-1 w-[100px] h-[50px]"  src={comtransLogo} alt="logo"/>
-                <Image className="m-1 w-[200px] h-[75px]"  src={comtransVan} alt="comtrans van"/>
+                <Image className="m-1 w-[200px] h-[75px] shadow-lg shadow-gray-500"  src={comtransVan} alt="comtrans van"/>
             </div>
             <div>
                 <SearchForm />
