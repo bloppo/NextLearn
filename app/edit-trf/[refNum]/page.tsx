@@ -28,10 +28,6 @@ export default function Page(){
 
     const { isLoading, error, data} = useQuery({queryKey : ['fetchTRF'], queryFn:fetchEm});
 
-    type ddict = {
-        [key: string]: any;
-    }
-
     const flattenData = (data:any,prefix:string,lvl:number) => {
 
         let dict:any = {};
@@ -60,20 +56,35 @@ export default function Page(){
 
     }
 
+    const blurText = (r) => {
+
+        let retVal = "";
+
+        if(r.substring(0,6) === 'Client') {
+            retVal =  "blur-md"
+        } else if(r.substring(0,14) === 'root-Narrative'){
+            retVal =  "blur-md"
+        }
+
+        return retVal;
+
+    }
+
     const formatTable = (sdata : any, lvl=0) => {
 
         const keys = Object.keys(sdata);
 
-        const stars = "*".repeat(lvl*5);
+        console.log("ClientStuff".substring(0,6));
 
-        //return <tr><td>Hope !</td></tr>
+        //const g = {`${"adfgsfasdfasdf".substring(0,6) == `Client" ? "blur-md" : ""}`}
+        //text-left w-[350px]
 
         return keys.map((r:any) => {
             return (<tr key={r.ref_num} className="odd:bg-gray-100 hover:bg-gray-300">
-                <td className="text-left w-[200px] text-indent-[20px]">{stars + r}</td>
+                <td className="text-left w-[200px] text-indent-[20px]">{r}</td>
                 {typeof sdata[r] === 'string'
                     ?
-                        <td className="text-left w-[350px]">{sdata[r]}</td>
+                        <td className = {`ext-left w-[350px] ${blurText(r)}`}>{sdata[r]}</td>
                     :
                         <td className="text-left w-[300px]"><br /></td>
             }
@@ -92,11 +103,11 @@ export default function Page(){
 
     return (<div>
 
-        <h1>Edit TRF # {params.refNum}</h1>
-
         <div className="m-5">
-            <Link className="text-blue-50 underline" href="../page3">Back to Listing</Link>
+            <Link className="text-blue-300 underline" href="../page3">Back to Listing</Link>
         </div>
+
+        <h1 className="text-white text-lg">Edit TRF # {params.refNum}</h1>
 
         <table className="w-full mt-2 border-2 border-black bg-blue-100">
             <thead className="block p-2 border-b-2 border-black">

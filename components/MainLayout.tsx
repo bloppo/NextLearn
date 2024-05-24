@@ -36,15 +36,14 @@ export default function MainLayout({children}:{children?:ReactNode}){
         <body className={inter.className} onMouseMove={(e) => activity()} onKeyDown={() => activity()}>
         <div className="flex flex-row m-2 pb-0">
             <div className={LEFT_SIDE}>
-                <div className="flex flex-row justify-between">
+                <div className="flex flex-row justify-between bg-gray-200 p-3 mb-5">
                     <Image className="mb-5" src={nextjsLogo} width={75} alt="logo"/>
                     <Image className="mb-5" src={vercelLogo} width={75} alt="logo"/>
                 </div>
-                <h1 className="mb-5">Sidebar</h1>
                 <div className="flex flex-col space-y-2">
                     <MyLink path="/" title='Root' activeLink={activeLink('/')}/>
                     <MyLink path="/home" title='Home' activeLink={activeLink('/home')}/>
-                    <MyLink path="/page1" title="Page 1" activeLink={activeLink('/page1')}/>
+                    <MyLink path="/page1" title="Signature" activeLink={activeLink('/page1')}/>
                     <MyLink path="/page2" title="Page 2" activeLink={activeLink('/page2')}/>
                     <MyLink path="/page3" title="Crisis" activeLink={activeLink('/page3')}/>
                     <SignedOut>

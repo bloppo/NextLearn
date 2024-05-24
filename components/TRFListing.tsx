@@ -26,8 +26,8 @@ const TRFListing = ({trf}:{trf:TRFListingRow[]}) => {
                     {trf.map((r)=> {
                         return (<tr key={r.ref_num} className="odd:bg-gray-100 hover:bg-gray-300">
                             <td className="text-left w-[100px]"><Link className={c} href={`/edit-trf/${r.ref_num}`}>{r.ref_num}</Link></td>
-                            <td className="text-left w-[100px]">{r.First}</td>
-                            <td className="text-left w-[100px]">{r.Last}</td>
+                            <td className="text-left w-[100px] blur-lg">{r.First}</td>
+                            <td className="text-left w-[100px] blur-md">{r.Last}</td>
                             {/*<td className="w-full"><br /></td>*/}
                         </tr>)
                     })}
