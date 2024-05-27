@@ -12,7 +12,7 @@ import hamburger from '@/public/hamburger.svg'
 
 export default function HomePage(){
 
-    return <div className="text-black flex flex-row flex-wrap items-start justify-start space-x-5 overflow-y-auto">
+    return <div className="text-black flex flex-row flex-wrap items-start justify-start space-x-5">
         <div>
             <SignedIn><h1 className="font-bold">Signed In</h1></SignedIn>
             <SignedOut><h1 className="font-bold">Signed Out</h1></SignedOut>
@@ -20,40 +20,43 @@ export default function HomePage(){
     <h1>Demo Menu</h1>  <TestDropDownMenu />
         <div className="leading-[0] basis-full"></div>
         <div className="mt-10 flex flex-col space-y-5 w-3/4">
-            <p>
+            <div>
                 Greetings.
-            </p>
-            <p>
+                <br /><br />
+                Responsive web pages means the layout changes a little depending on if the
+                pages are being viewed on a cell phone vs. a tablet or desktop browser.
+            </div>
+            <div>
                 <div className="font-bold">Salt River Paddle Boarding</div>
                 Perplexity.ai generated the article. I said write a story about paddle boarding
                 on the Salt river and that&apos;s what it churned out.
                 <br /><br />
                 I took the picture. I was on a path that looked down on the river.
                 The sun was rising in the East. So good lighting, good angle, and white water action made an interesting picture.
-            </p>
-            <p>
+            </div>
+            <div>
                 <div className="font-bold">Signature</div>
                 Signatures are now reliably collected without using the Signature Capture app.
-            </p>
-            <p>
+            </div>
+            <div>
                 <div className="font-bold">Crisis</div>
                 Search TRFs for a date range and select a TRF to edit.
                 <br /><br />
                 Edit TRF is a listing of the fields that will be edited.
                 <br /><br />
                 The drop down menu is where you can Send an Emain, Upload a scanned TRF, or View the scanned TRF.
-            </p>
-            <p>
+            </div>
+            <div>
                 <div className="font-bold">Sign Out</div>
-            </p>
+            </div>
 
             <hr className="bg-black h-1" />
 
-            <p>
+            <div>
                 The <Image className="inline bg-white ml-2 mr-2" src={hamburger} alt="menu icon"/> icon represents a
                 drop down menu.
                 Click on it to select from a menu.
-            </p>
+            </div>
         </div>
     </div>
 

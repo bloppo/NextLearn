@@ -13,9 +13,6 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function MainLayout({children}:{children?:ReactNode}){
 
-    const LEFT_SIDE = "bg-gray-300 md:h-[calc(100vh-20px)] w-full md:w-3/12 p-5 border-black border-2 mb-1 md:mr-1"
-    const RIGHT_SIDE = "bg-gray-300 md:h-[calc(100vh-20px)] w-full md:w-3/4  p-5 border-2 border-black"
-
     //const [activity ,startCheck,stopCheck] = useTimeOut(1000 * 60 * 1);
 
     // @ts-ignore
@@ -37,8 +34,8 @@ export default function MainLayout({children}:{children?:ReactNode}){
     return (
         <body className={inter.className}>
         <div className="flex flex-col md:flex-row m-2 pb-0">
-            <div className={LEFT_SIDE}>
-                <div className="w-1/2 md:w-full">
+            <div className="bg-gray-300 md:h-[calc(100vh-20px)] w-full md:w-3/12 p-5 border-black border-2 mb-1 md:mr-1">
+                <div className="w-[55%] md:w-full">
                     <div className="flex flex-row justify-between bg-gray-200 p-3 mb-5 shadow-gray-500 shadow-lg">
                         <Image className="mb-5" src={nextjsLogo} width={75} h-auto max-h-full alt="logo"/>
                         <Image className="mb-5" src={vercelLogo} width={75} h-auto max-h-full alt="logo"/>
@@ -57,7 +54,7 @@ export default function MainLayout({children}:{children?:ReactNode}){
                     </div>
                 </div>
             </div>
-            <div className={RIGHT_SIDE}>
+            <div className="bg-gray-300 md:h-[calc(100vh-20px)] w-full md:w-3/4  p-5 border-2 border-black overflow-y-auto">
                 {children}
             </div>
         </div>

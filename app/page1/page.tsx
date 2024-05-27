@@ -39,10 +39,8 @@ export default function Page(){
         <h1 className="text-2xl font-bold">Signature</h1>
         <SignatureCanvas
             ref={sigCanvasRef}
-            minWidth={1}
-            maxWidth={1}
             penColor='black'
-            canvasProps={{className:'sigCanvas border-[5px] border-black bg-white'}}
+            canvasProps={{width:300,height:100,className:'signature-canvas border-[5px] border-black bg-white'}}
         />
         <div className="flex flex-row space-x-5">
             <Button className="text-white" onClick={() => clear()}>

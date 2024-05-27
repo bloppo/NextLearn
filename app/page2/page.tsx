@@ -11,7 +11,7 @@ export default function Page(){
 
     // Using a query key and a fetch function
     // @ts-ignore
-
+/*
     const [rs,setRs] = useState();
 
     // @ts-ignore
@@ -38,7 +38,7 @@ export default function Page(){
     if (error) return 'An error has occurred: ' + error.message;
 
     const r = data?.map((item:{id:number,a:string,b:number}) => (<div className='text-black font-bold' key={item.id}>{item.a}&nbsp;{item.b}</div>));
-
+*/
     //console.log(r);
 
     return (
@@ -94,7 +94,6 @@ export default function Page(){
                 <span className="italic text-sm">Photo provided by Pete.</span>
                 <br /><br />
             </p>
-            {r}
     </div>);
 }
 
