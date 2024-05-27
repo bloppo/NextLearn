@@ -9,18 +9,22 @@ import CollapseWithTitle from "@/components/CollapseWithTitle";
 
 const Page = () => {
 
-    let initSDate = new Date().toDateString();
-    let initEDate = new Date().toDateString();
+    let initSDate:string | null = new Date().toDateString();
+    let initEDate : string | null = new Date().toDateString();
 
-    if(typeof window !== 'undefined' && typeof localStorage !== 'undefined'){
+    /*
+    if(typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
 
-        // @ts-ignore
+        if (localStorage.getItem('transportSDate')) {
         initSDate = localStorage.getItem('transportSDate');
+    }
         // @ts-ignore
-        initEDate = localStorage.getItem('transportEDate');
+        if (localStorage.getItem('transportEDate')) {
+            initEDate = localStorage.getItem('transportEDate');
+        }
 
     }
-
+*/
 
     const [transportSDate,setTransportSDate] = useState<string>(initSDate);
 
