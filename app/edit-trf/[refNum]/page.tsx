@@ -6,6 +6,8 @@ import Link from 'next/link';
 import axios from "axios";
 import {useQuery} from "@tanstack/react-query";
 
+import {CrisisDropDownMenu} from "@/components/TestDropDownMenu";
+
 export default function Page(){
 
     const params = useParams();
@@ -74,13 +76,13 @@ export default function Page(){
 
         const keys = Object.keys(sdata);
 
-        console.log("ClientStuff".substring(0,6));
+        //console.log("ClientStuff".substring(0,6));
 
         //const g = {`${"adfgsfasdfasdf".substring(0,6) == `Client" ? "blur-md" : ""}`}
         //text-left w-[350px]
 
-        return keys.map((r:any) => {
-            return (<tr key={r.ref_num} className="odd:bg-gray-100 hover:bg-gray-300">
+        return keys.map((r:any,index) => {
+            return (<tr key={index} className="odd:bg-gray-100 hover:bg-gray-300">
                 <td className="text-left w-[200px] text-indent-[20px]">{r}</td>
                 {typeof sdata[r] === 'string'
                     ?
@@ -103,8 +105,9 @@ export default function Page(){
 
     return (<div>
 
-        <div className="m-5">
+        <div className="flex flex-row justify-between mr-5">
             <Link className="text-blue-500 underline" href="../page3">Back to Listing</Link>
+            <CrisisDropDownMenu />
         </div>
 
         <h1 className="text-black text-lg">Edit TRF # {params.refNum}</h1>

@@ -5,13 +5,15 @@ import {useRouter, usePathname} from "next/navigation";
 
 export default function useTimeOut(timeoutMS = 60000){
 
+    const initIsRunning = localStorage.getItem('isRunning')
+
     const router = useRouter();
 
     const pathname = usePathname();
 
     const [lastActivity,setLastActivity] = useState(new Date().getTime());
 
-    const [isRunning,setIsRunning] = useState(false);
+    const [isRunning,setIsRunning] = useState(initIsRunning !== 'false' );
 
     const onUserActivity = useCallback(() => {
        setLastActivity(new Date().getTime());
@@ -24,8 +26,8 @@ export default function useTimeOut(timeoutMS = 60000){
                 const now = new Date().getTime();
                 if (now - lastActivity > timeoutMS) {
                     //setIsRunning(false);
-
-                    router.push('/sign-out');
+                    //localStorage.setItem('isRunning','false')
+                        router.push('/initing/sign-out');
                 }
             } else {
                 console.log('not running')
@@ -39,11 +41,12 @@ export default function useTimeOut(timeoutMS = 60000){
         return () => {
             setLastActivity(new Date().getTime());
             setIsRunning(true);
+            localStorage.setItem('isRunning','true')
         }
     }
 
     const stop = () => {
-        return () => { setIsRunning(false)};
+        return () => {localStorage.setItem('isRunning','false'); setIsRunning(false)};
     }
 
     return [onUserActivity,start,stop] ;

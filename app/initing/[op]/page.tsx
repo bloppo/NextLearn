@@ -1,7 +1,7 @@
 'use client'
 
 import {useParams} from "next/navigation";
-import {redirect}  from "next/navigation";
+import {redirect,RedirectType}  from "next/navigation";
 import {useContext, useEffect} from "react";
 import {ActivityContext} from "@/components/ActivityProvider";
 
@@ -19,9 +19,19 @@ export default function Page(){
     const {startActivity, stopActivity} = useContext(ActivityContext);
 
     useEffect(() => {
-        params.op === 'start' ? startActivity() : stopActivity() ;
-        // @ts-ignore
-        redirect('/home','replace')
+        if(params.op === 'start'){
+            //startActivity()
+            // @ts-ignore
+            redirect('/home',RedirectType.replace)
+        } else if(params.op === 'stop') {
+            //stopActivity() ;
+            // @ts-ignore
+            redirect('/home',RedirectType.replace)
+        } else if(params.op === 'sign-out'){
+            // @ts-ignore
+            redirect('/sign-out',RedirectType.replace)
+        }
+
     },[])
 
     return <div>Init</div>

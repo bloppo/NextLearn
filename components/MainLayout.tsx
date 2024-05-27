@@ -16,15 +16,15 @@ export default function MainLayout({children}:{children?:ReactNode}){
     const LEFT_SIDE = "bg-gray-300 h-[calc(100vh-20px)] w-3/12 p-5 border-black border-2 mr-1"
     const RIGHT_SIDE = "bg-gray-300 h-[calc(100vh-20px)]  w-3/4  p-5 border-2 border-black"
 
-    const [activity ,startCheck,stopCheck] = useTimeOut(1000 * 60 * 15);
+    //const [activity ,startCheck,stopCheck] = useTimeOut(1000 * 60 * 1);
 
     // @ts-ignore
     const {updateStartActivity,updateStopActivity} = useContext(ActivityContext);
 
-    useEffect(() => {
-        updateStartActivity(startCheck)
-        updateStopActivity(stopCheck);
-    },[]);
+    // useEffect(() => {
+    //     updateStartActivity(startCheck)
+    //     updateStopActivity(stopCheck);
+    // },[]);
 
     const pathname = usePathname();
 
@@ -32,16 +32,17 @@ export default function MainLayout({children}:{children?:ReactNode}){
         return pathname === r ? "bg-red-100" : "bg-gray-100";
     }
 
+    //onMouseMove={(e) => activity()} onKeyDown={() => activity()}
+
     return (
-        <body className={inter.className} onMouseMove={(e) => activity()} onKeyDown={() => activity()}>
+        <body className={inter.className}>
         <div className="flex flex-row m-2 pb-0">
             <div className={LEFT_SIDE}>
-                <div className="flex flex-row justify-between bg-gray-200 p-3 mb-5">
-                    <Image className="mb-5" src={nextjsLogo} width={75} alt="logo"/>
-                    <Image className="mb-5" src={vercelLogo} width={75} alt="logo"/>
+                <div className="flex flex-row justify-between bg-gray-200 p-3 mb-5 shadow-gray-500 shadow-lg">
+                    <Image className="mb-5" src={nextjsLogo} width={75} h-auto max-h-full alt="logo"/>
+                    <Image className="mb-5" src={vercelLogo} width={75} h-auto max-h-full alt="logo"/>
                 </div>
                 <div className="flex flex-col space-y-2">
-                    <MyLink path="/" title='Root' activeLink={activeLink('/')}/>
                     <MyLink path="/home" title='Home' activeLink={activeLink('/home')}/>
                     <MyLink path="/page2" title="Salt River Paddle Boarding" activeLink={activeLink('/page2')}/>
                     <MyLink path="/page1" title="Signature" activeLink={activeLink('/page1')}/>

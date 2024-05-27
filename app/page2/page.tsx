@@ -39,12 +39,12 @@ export default function Page(){
 
     const r = data?.map((item:{id:number,a:string,b:number}) => (<div className='text-black font-bold' key={item.id}>{item.a}&nbsp;{item.b}</div>));
 
-    console.log(r);
+    //console.log(r);
 
     return (
         <div className="text-black h-full overflow-y-auto">
             <h1 className="w-full text-center text-xl font-bold mb-5">Paddle Boarding On The Salt River</h1>
-            <Image className = "w-[300px] m-5 float-left" src={saltRiver} alt = "salt river"/>
+            <Image className = "w-[300px] h-auto max-h-full m-5 float-left" src={saltRiver} alt = "salt river"/>
             <p className="">
                 Paddle boarding on the Salt River near Mesa, Arizona offers a unique and exhilarating experience,
                 allowing you to immerse yourself in the stunning desert landscapes and encounter diverse wildlife up

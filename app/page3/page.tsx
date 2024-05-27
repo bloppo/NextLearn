@@ -4,19 +4,54 @@ import axios from "axios";
 import {useQuery} from "@tanstack/react-query";
 import TRFListing from "@/components/TRFListing";
 import SearchTRFs from "@/components/SearchTRFs";
+import {useState,useEffect} from "react";
+import CollapseWithTitle from "@/components/CollapseWithTitle";
 
 const Page = () => {
 
+    let initSDate = new Date().toDateString();
+    let initEDate = new Date().toDateString();
+
+    if(typeof window !== 'undefined' && typeof localStorage !== 'undefined'){
+
+        // @ts-ignore
+        initSDate = localStorage.getItem('transportSDate');
+        // @ts-ignore
+        initEDate = localStorage.getItem('transportEDate');
+
+    }
+
+
+    const [transportSDate,setTransportSDate] = useState<string>(initSDate);
+
+    const [transportEDate,setTransportEDate] = useState<string>(initEDate);
+
+    const [closed,setClosed] = useState<boolean>(false);
+
+    const toggleClosed= () => {
+
+        setClosed((p) => !p);
+
+    }
+
+    const updateTransportDate = (sdate:string,edate:string) => {
+        setTransportSDate(sdate);
+        setTransportEDate(edate);
+    }
+
     // @ts-ignore
-    const fetchEm =  async () => {
+    const fetchEm =  async ({queryKey}) => {
 
         const url = 'https://ws.comtrans.net/weborderdblookup/CrisisDev.asmx/GetTRFListing';
+
+        const [_,sdate,edate] = queryKey;
 
         const res = await axios({
             url: url,
             method: 'get',
             params : {
-                trfDate : "2024-05-22"
+                trfSDate : sdate,
+                trfEDate : edate
             }
         });
 
@@ -24,20 +59,26 @@ const Page = () => {
 
     }
 
-    console.log('Page 3');
+    const plus =  String.fromCodePoint(0x2795)
+    const minus =  String.fromCodePoint(0x2796);
 
-    const { isLoading, error, data} = useQuery({queryKey : ['fetchTRFListing'], queryFn:fetchEm});
-
-    console.log(data);
+    const { isLoading, error, data} = useQuery({queryKey : ['fetchTRFListing',transportSDate,transportEDate], queryFn:fetchEm});
 
     if (isLoading) return 'Loading...';
 
     if (error) return 'An error has occurred: ' + error.message;
 
-    return <div>
-        <SearchTRFs />
-        <TRFListing trf={data}/>
-    </div>
+    return <>
+        <CollapseWithTitle toggleClosed={toggleClosed}
+                           closed={closed}
+                           title="Transportation Requests">
+            <SearchTRFs closed={closed}
+                        updateTransportDate={updateTransportDate}
+            />
+        </CollapseWithTitle>
+        <TRFListing trf={data}
+                    closed={closed}/>
+    </>
 }
 
 
