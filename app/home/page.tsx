@@ -24,7 +24,7 @@ export default function HomePage(){
                 Greetings.
             </p>
             <p>
-                <h1 className="font-bold">Salt River Paddle Boarding</h1>
+                <div className="font-bold">Salt River Paddle Boarding</div>
                 Perplexity.ai generated the article. I said write a story about paddle boarding
                 on the Salt river and that&apos;s what it churned out.
                 <br /><br />
@@ -32,11 +32,11 @@ export default function HomePage(){
                 The sun was rising in the East. So good lighting, good angle, and white water action made an interesting picture.
             </p>
             <p>
-                <h1 className="font-bold">Signature</h1>
+                <div className="font-bold">Signature</div>
                 Signatures are now reliably collected without using the Signature Capture app.
             </p>
             <p>
-                <h1 className="font-bold">Crisis</h1>
+                <div className="font-bold">Crisis</div>
                 Search TRFs for a date range and select a TRF to edit.
                 <br /><br />
                 Edit TRF is a listing of the fields that will be edited.
@@ -44,7 +44,7 @@ export default function HomePage(){
                 The drop down menu is where you can Send an Emain, Upload a scanned TRF, or View the scanned TRF.
             </p>
             <p>
-                <h1 className="font-bold">Sign Out</h1>
+                <div className="font-bold">Sign Out</div>
             </p>
 
             <hr className="bg-black h-1" />
