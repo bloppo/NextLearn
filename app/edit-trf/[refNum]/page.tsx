@@ -7,8 +7,12 @@ import axios from "axios";
 import {useQuery} from "@tanstack/react-query";
 
 import {CrisisDropDownMenu} from "@/components/TestDropDownMenu";
+import {useState} from "react";
+import ViewScannedTRFDialog from "@/components/ViewScannedTRFDialog";
 
 export default function Page(){
+
+    const [open,setOpen] = useState(false);
 
     const params = useParams();
 
@@ -107,7 +111,7 @@ export default function Page(){
 
         <div className="flex flex-row justify-between mr-5">
             <Link className="text-blue-500 underline" href="../page3">Back to Listing</Link>
-            <CrisisDropDownMenu />
+            <CrisisDropDownMenu openViewScannedTRFDialog={()=>setOpen(true)}/>
         </div>
 
         <h1 className="text-black text-lg">Edit TRF # {params.refNum}</h1>
@@ -119,11 +123,12 @@ export default function Page(){
                 <th className="text-left w-[300px]">Value</th>
             </tr>
             </thead>
-            <tbody className="block max-h-[500px] p-2 overflow-x-auto overflow-y-auto">
+            <tbody className="block max-h-[78vh] p-2 overflow-x-auto overflow-y-auto">
             {formatTable(flatdata)}
             </tbody>
         </table>
 
+        <ViewScannedTRFDialog open={open} setOpen={setOpen} />
 
     </div>)
 

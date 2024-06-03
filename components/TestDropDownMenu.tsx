@@ -110,7 +110,8 @@ const TestDropDownMenu = () => {
 
     };
 
-export const CrisisDropDownMenu = () => {
+// @ts-ignore
+export const CrisisDropDownMenu = ({openViewScannedTRFDialog}:{openViewScannedTRFDialog:()=>void}) => {
 
     return (
         <DropdownMenu.Root>
@@ -127,7 +128,8 @@ export const CrisisDropDownMenu = () => {
                     <DropdownMenu.Item className="DropdownMenuItem">
                         Upload Scanned TRF
                     </DropdownMenu.Item>
-                    <DropdownMenu.Item className="DropdownMenuItem">
+                    <DropdownMenu.Item className="DropdownMenuItem"
+                    onSelect={openViewScannedTRFDialog}>
                         View Scanned TRF
                     </DropdownMenu.Item>
                 </DropdownMenu.Content>

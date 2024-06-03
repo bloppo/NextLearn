@@ -3,9 +3,8 @@
 
 import TestDropDownMenu from "@/components/TestDropDownMenu";
 
-import {Button} from "@/components/vi/button";
 import {SignedIn, SignedOut} from "@clerk/nextjs";
-import {HamburgerMenuIcon} from '@radix-ui/react-icons';
+
 import Image from "next/image";
 
 import hamburger from '@/public/hamburger.svg'
@@ -22,7 +21,7 @@ export default function HomePage(){
         <div className="mt-10 flex flex-col space-y-5 w-3/4">
             <div>
                 Greetings.
-                <br /><br />
+                <br/><br/>
                 Responsive web pages means the layout changes a little depending on if the
                 pages are being viewed on a cell phone vs. a tablet or desktop browser.
             </div>
@@ -30,9 +29,10 @@ export default function HomePage(){
                 <div className="font-bold">Salt River Paddle Boarding</div>
                 Perplexity.ai generated the article. I said write a story about paddle boarding
                 on the Salt river and that&apos;s what it churned out.
-                <br /><br />
+                <br/><br/>
                 I took the picture. I was on a path that looked down on the river.
-                The sun was rising in the East. So good lighting, good angle, and white water action made an interesting picture.
+                The sun was rising in the East. So good lighting, good angle, and white water action made an interesting
+                picture.
             </div>
             <div>
                 <div className="font-bold">Signature</div>
@@ -41,19 +41,28 @@ export default function HomePage(){
             <div>
                 <div className="font-bold">Crisis</div>
                 Search TRFs for a date range and select a TRF to edit.
-                <br /><br />
+                <br/><br/>
                 Edit TRF is a listing of the fields that will be edited.
-                <br /><br />
-                The drop down menu is where you can Send an Emain, Upload a scanned TRF, or View the scanned TRF.
+                <br/><br/>
+                The drop down menu is where you can Send an Email, Upload a scanned TRF, or View the scanned TRF.
+                <br/><br/>
+                Click on the <b>View Scanned TRF</b> menu item to view a random scanned TRF not related to the selected
+                TRF.
+            </div>
+            <div>
+                <div className="font-bold">Sign Up</div>
+            </div>
+            <div>
+                <div className="font-bold">Sign In</div>
             </div>
             <div>
                 <div className="font-bold">Sign Out</div>
             </div>
 
-            <hr className="bg-black h-1" />
+            <hr className="bg-black h-1"/>
 
             <div>
-                The <Image className="inline bg-white ml-2 mr-2" src={hamburger} alt="menu icon"/> icon represents a
+                The <Image className="inline bg-white ml-2 mr-2 w-7 h-7 rounded-full" src={hamburger} alt="menu icon"/> icon represents a
                 drop down menu.
                 Click on it to select from a menu.
             </div>

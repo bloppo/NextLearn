@@ -10,6 +10,13 @@ const nextConfig = {
         NEXT_PUBLIC_CLERK_SIGN_UP_URL : '/sign-up'
 
     },
+    webpack: (config) => {
+        config.module.rules.push({
+            test: /\.pdf$/,
+            use: 'file-loader'
+        })
+    return config;
+    }
 };
 
 export default nextConfig;

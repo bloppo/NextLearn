@@ -12,7 +12,6 @@ const Page = () => {
     let initSDate:string | null = new Date().toDateString();
     let initEDate : string | null = new Date().toDateString();
 
-    /*
     if(typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
 
         if (localStorage.getItem('transportSDate')) {
@@ -24,11 +23,10 @@ const Page = () => {
         }
 
     }
-*/
 
-    const [transportSDate,setTransportSDate] = useState<string>(initSDate);
+    const [transportSDate,setTransportSDate] = useState<string | null>(initSDate);
 
-    const [transportEDate,setTransportEDate] = useState<string>(initEDate);
+    const [transportEDate,setTransportEDate] = useState<string | null>(initEDate);
 
     const [closed,setClosed] = useState<boolean>(false);
 

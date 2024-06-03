@@ -23,7 +23,7 @@ const TRFListing = ({trf,closed}:{trf:TRFListingRow[], closed:boolean}) => {
                 <th className="text-left w-[100px]">Team</th>
             </tr>
             </thead>
-            <tbody className={"block p-2 overflow-y-auto "  + `${closed ? "h-[550px]" : "h-[275px]"}`}>
+            <tbody className={"block p-2 overflow-y-auto "  + `${closed ? "h-[78vh]" : "h-[40vh]"}`}>
                     {trf.map((r)=> {
                         return (<tr key={r.ref_num} className="odd:bg-gray-100 hover:bg-gray-300">
                             <td className="text-left w-[100px]"><Link className={c}
