@@ -3,7 +3,7 @@ import {useParams} from "next/navigation";
 import {redirect}  from "next/navigation";
 
 
-const isPublicRoute = createRouteMatcher(['/','/home(.*)','/sign-in(.*)', '/sign-out(.*)', '/sign-up(.*)', '/initing(.*)']);
+const isPublicRoute = createRouteMatcher(['/','/home(.*)','/page2(.*)','/sign-in(.*)', '/sign-out(.*)', '/sign-up(.*)', '/initing(.*)']);
 
 export default clerkMiddleware((auth, req) => {
 

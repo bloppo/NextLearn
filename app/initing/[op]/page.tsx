@@ -16,7 +16,7 @@ export default function Page(){
     const params = useParams();
 
     // @ts-ignore
-    const {startActivity, stopActivity} = useContext(ActivityContext);
+    //const {startActivity, stopActivity} = useContext(ActivityContext);
 
     useEffect(() => {
         if(params.op === 'start'){

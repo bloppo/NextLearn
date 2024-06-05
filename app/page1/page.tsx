@@ -6,42 +6,38 @@ import {Button} from "@/components/vi/button";
 
 export default function Page(){
 
-    const sigCanvasRef = useRef(null);
+    const sigCanvasRef = useRef<SignatureCanvas>(null);
 
     useEffect(() => {
         const sig = localStorage.getItem('signature');
-        // @ts-ignore
-        sigCanvasRef.current?.fromDataURL(sig);
+        if(sig && sigCanvasRef.current) {
+            sigCanvasRef.current.fromDataURL(sig,{width:300,height:100 });
+        }
     },[])
 
     const clear = () => {
-            // @ts-ignore
         sigCanvasRef.current?.clear();
     }
 
     const save = () => {
-        console.log('save');
         if(sigCanvasRef.current){
-            // @ts-ignore
-            const canvas = sigCanvasRef.current.getTrimmedCanvas();
+            const canvas = sigCanvasRef.current.getCanvas();
             const sig = canvas.toDataURL();
             localStorage.setItem('signature',sig)
         }
     }
 
-    //            ref={sigCanvas}
-    //            width={500}
-    //            height={200}
-    // @ts-ignore
-
     // @ts-ignore
     return <div className="text-black h-full flex flex-col space-y-5 items-center justify-center">
         <h1 className="text-2xl font-bold">Signature</h1>
-        <SignatureCanvas
-            ref={sigCanvasRef}
-            penColor='black'
-            canvasProps={{width:300,height:100,className:'signature-canvas border-[5px] border-black bg-white'}}
-        />
+        <div className="border-[5px] border-black bg-white">
+            <SignatureCanvas
+                ref={sigCanvasRef}
+                penColor='black'
+                dotSize={1}
+                canvasProps={{width:300,height:100,className:'signature-canvas'}}
+            />
+        </div>
         <div className="flex flex-row space-x-5">
             <Button className="text-white" onClick={() => clear()}>
                 Clear

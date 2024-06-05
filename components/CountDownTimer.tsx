@@ -22,9 +22,9 @@ export default function CountDownTimer({className,title,duration,onComplete}: {c
 
     return <div className={className}>
         {title ? title(timeLeft) : `Count Down Timer : ${timeLeft}`}
-        <button className="text-sm ml-2 p-2 bg-black text-white border-2"
+        <button className="hover:cursor-grab text-sm ml-2 p-2 hover:bg-black bg-gray-500 text-white border-2"
                 onClick={() => {setIsRunning(prevState => ! prevState)}}>
-            Stop {isRunning ? 'true' : 'false'}
+            Stay signed in
         </button>
     </div>
 

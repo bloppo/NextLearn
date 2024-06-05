@@ -33,7 +33,7 @@ export default function Page(){
     const { signOut } = useClerk();
 
     const cb = () => {
-        stopActivity();
+        //stopActivity();
         signOut( {redirectUrl: '/home' });
     }
 
@@ -42,6 +42,8 @@ export default function Page(){
                         title={titlecb}
                         duration={20}
                         onComplete={cb}/>
-        <SignOutButton  redirectUrl = {'/initing/stop'} />
+        <div className="bg-gray-500 hover:bg-black hover:cursor-grab text-white p-2">
+            <SignOutButton redirectUrl = {'/initing/stop'} />
+        </div>
     </div>
 }

@@ -4,36 +4,44 @@
 import {FormEvent, ChangeEvent, useState} from "react";
 
 import {parseISO} from 'date-fns'
+
 // @ts-ignore
 export default function SearchForm(
     {updateTransportDate}:{updateTransportDate:(s :string, t: string) => void}) {
 
-    let initSDate = new Date().toDateString();
-    let initEDate = initSDate;
+    let initSDate : string = new Date().toDateString();
+    let initEDate : string  = initSDate;
 
     if(localStorage){
-        // @ts-ignore
-        initSDate = localStorage.getItem('transportSDate');
-        // @ts-ignore
-        initEDate = localStorage.getItem('transportEDate');
+        if(localStorage.getItem('transportSDate')){
+            initSDate = localStorage.getItem('transportSDate') as string;
+            }
+        if(localStorage.getItem('transportEDate')) {
+            initEDate = localStorage.getItem('transportEDate') as string;
+        }
     }
 
-    const [sdate,setSdate] = useState(initSDate);
-    const [edate,setEdate] = useState(initEDate);
+    const [sdate,setSdate] = useState<string>(initSDate);
+    const [edate,setEdate] = useState<string>(initEDate);
 
     const handleSubmit = (e:FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
         localStorage.setItem('transportSDate',sdate)
+
         localStorage.setItem('transportEDate',edate)
+
         updateTransportDate(sdate,edate)
     }
 
     const handleSDateChange = (e:ChangeEvent<HTMLInputElement>) => {
+
         setSdate(e.target.value);
+
         const date1 = parseISO(e.target.value);
+
         const date2 = parseISO(edate);
-//        console.log(e.target.value + " " + date1.toString())
-//        console.log(edate + " " + date2.toString())
+
         if(date2 < date1)
         {
             setEdate(e.target.value);
