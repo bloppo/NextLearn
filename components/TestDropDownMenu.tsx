@@ -116,7 +116,7 @@ export const CrisisDropDownMenu = ({openViewScannedTRFDialog}:{openViewScannedTR
     return (
         <DropdownMenu.Root>
             <DropdownMenu.Trigger asChild>
-                <button className="IconButton" aria-label="Customise options">
+                <button className="IconButton z-50" aria-label="Customise options">
                     <HamburgerMenuIcon />
                 </button>
             </DropdownMenu.Trigger>

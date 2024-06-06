@@ -11,15 +11,15 @@ import hamburger from '@/public/hamburger.svg'
 
 export default function HomePage(){
 
-    return <div className="text-black flex flex-col items-start justify-start space-y-5 pl-10">
-        <h1 className="w-full text-center m-5 text-2xl font-bold">Welcome To The Demo</h1>
-        <div className="flex flex-row justify-between space-x-10">
+    return <div className="text-black flex flex-col items-start justify-start space-y-5">
+        <h1 className="w-full mt-5 text-center text-2xl font-bold">Welcome To The Demo</h1>
+        <div className="flex flex-row justify-between space-x-10 pl-3">
             <SignedIn><h1 className="font-bold">Signed In</h1></SignedIn>
             <SignedOut><h1 className="font-bold">Signed Out</h1></SignedOut>
             <h1>Demo Menu</h1>  <TestDropDownMenu/>
         </div>
         {/*<div className="leading-[0] basis-full"></div>*/}
-        <div className="mt-10 flex flex-col space-y-5 w-3/4">
+        <div className="mt-10 pl-3 flex flex-col space-y-5 w-3/4">
             <div>
                 Greetings.
                 <br/><br/>

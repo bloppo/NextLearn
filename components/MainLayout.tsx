@@ -40,9 +40,9 @@ export default function MainLayout({children}:{children?:ReactNode}){
 
     return (
         <body className={inter.className}>
-        <div className="flex flex-col md:flex-row w-full">
-            <div className={`bg-gray-300 md:h-[98vh] md:w-1/4 p-5 border-black border-2 m-1`}>
-                    <div className="w-[55%] md:w-full">
+        <div className="flex flex-col md:flex-row w-full items-center">
+            <div className={`bg-gray-300 md:h-[98vh] w-[95%] md:w-1/4 p-5 border-black border-2 m-1`}>
+                    <div className="md:w-full">
                         <CollapseWithTitle toggleClosed={toggleClosed} closed={closed} title="Main Menu">
                         <div className="flex flex-row justify-between bg-gray-200 p-3 mb-5 shadow-gray-500 shadow-lg">
                             <Image className="mb-5" src={nextjsLogo} width={75} h-auto max-h-full alt="logo"/>
@@ -63,7 +63,7 @@ export default function MainLayout({children}:{children?:ReactNode}){
                         </CollapseWithTitle>
                     </div>
                 </div>
-            <div className={`bg-gray-300 md:h-[98vh] w-full md:w-3/4 m-1 p-2 border-2 border-black overflow-y-auto`}>
+            <div className={`bg-gray-300 md:h-[98vh] w-[95%] md:w-3/4 m-1 p-2 border-2 border-black overflow-y-auto`}>
                 {children}
             </div>
         </div>

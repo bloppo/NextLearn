@@ -13,12 +13,11 @@ const TRFListing = ({trf,closed}:{trf:TRFListingRow[], closed:boolean}) => {
     // @ts-ignore
     // @ts-ignore
     return <div>
-        <table className="w-full mt-2 border-2 border-black bg-blue-100">
+        <table className="w-full text-sm mt-2 border-2 border-black bg-blue-100">
             <thead className="block p-2 border-b-2 border-black">
             <tr>
                 <th className="text-left w-[100px]">TRF #</th>
-                <th className="text-left w-[100px]">First</th>
-                <th className="text-left w-[100px]">Last</th>
+                <th className="text-left w-[50px]">First Last</th>
                 <th className="text-left w-[100px]">Transport Date</th>
                 <th className="text-left w-[100px]">Team</th>
             </tr>
@@ -29,8 +28,7 @@ const TRFListing = ({trf,closed}:{trf:TRFListingRow[], closed:boolean}) => {
                             <td className="text-left w-[100px]"><Link className={c}
                                                                       href={`/edit-trf/${r.ref_num}`}>{r.ref_num}</Link>
                             </td>
-                            <td className="text-left w-[100px] blur-lg">{r.First}</td>
-                            <td className="text-left w-[100px] blur-md">{r.Last}</td>
+                            <td className="text-left w-[50px] blur-lg">{r.First} {r.Last}</td>
                             <td className="text-left w-[100px]">{r.TransportDate}</td>
                             <td className="text-left w-[100px]">{r.Team}</td>
                         </tr>)
